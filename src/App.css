@@ -1,103 +1,209 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #0f1115;
+  color: #f1f1f1;
+  line-height: 1.6;
 }
 
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
 }
 
 header {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 2rem 0;
 }
 
 header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.2rem;
+  color: #00fff7;
 }
 
 .tagline {
-  color: #666;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 1rem;
 }
 
 nav a {
-  margin: 0 10px;
+  margin: 0 1rem;
+  color: #f1f1f1;
   text-decoration: none;
-  color: #0077cc;
   font-weight: bold;
 }
 
-section {
-  margin: 40px 0;
+nav a:hover {
+  color: #00fff7;
 }
 
-section#hero {
-  background-color: #fff;
-  padding: 40px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+section {
+  margin: 3rem 0;
+}
+
+#hero {
   text-align: center;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 2rem;
 }
 
 .card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: #1a1c22;
+  border: 1px solid #2c2f36;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .img-placeholder {
-  background-color: #eaeaea;
-  height: 150px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #999;
+  background-color: #2f3136;
+  color: #ccc;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 6px;
+  margin-bottom: 1rem;
 }
 
 .card-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 1rem;
 }
 
 .btn {
-  background-color: #0077cc;
-  color: white;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background-color: #00fff7;
+  color: #0f1115;
+  border-radius: 4px;
   text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 6px;
   font-weight: bold;
 }
 
 .btn.outline {
-  background-color: transparent;
-  border: 2px solid #0077cc;
-  color: #0077cc;
+  background: transparent;
+  border: 1px solid #00fff7;
+  color: #00fff7;
+}
+
+.btn:hover {
+  background-color: #00d6cc;
+  color: #0f1115;
 }
 
 footer {
   text-align: center;
-  margin-top: 60px;
-  padding: 20px;
+  margin-top: 4rem;
   font-size: 0.9rem;
-  color: #999;
+  color: #888;
+}
+
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f9f9f9;
+    color: #222;
+  }
+
+  header h1 {
+    color:rgb(255, 255, 255);
+  }
+
+  .card {
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #ddd;
+  }
+
+  .img-placeholder {
+    background-color: #eee;
+    color: #555;
+  }
+
+  .btn {
+    background-color: #003366;
+    color: #fff;
+  }
+
+  .btn.outline {
+    border-color: #003366;
+    color: #003366;
+  }
+
+  .btn:hover {
+    background-color: #0055aa;
+    color: #fff;
+  }
+
+  footer {
+    color: #666;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.vanta-background {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #f1f1f1;
+}
+.vanta-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.vanta-toggle button {
+  background-color: #00fff7;
+  color: #0f1115;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vanta-toggle button:hover {
+  background-color: #00d6cc;
+}
+/* Fondo cuando el Vanta está activo */
+.vanta-background {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fondo fijo oscuro cuando Vanta está desactivado */
+.fondo-estatico {
+  background-color: #0f1115 !important;
+}
+
+/* Asegúrate de que el texto sea claro */
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #f1f1f1;
 }
