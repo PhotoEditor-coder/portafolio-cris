@@ -35,35 +35,32 @@ function App() {
   }, [vantaEnabled]);
 
   return (
-  <div
-  ref={vantaRef}
-  className={`vanta-background ${!vantaEnabled ? 'fondo-estatico' : ''}`}
->
-  <div className="vanta-toggle">
-    <button onClick={() => setVantaEnabled((prev) => !prev)}>
-      {vantaEnabled ? 'Desactivar fondo' : 'Activar fondo'}
-    </button>
-  </div>
-
+    <div
+      ref={vantaRef}
+      className={`vanta-background ${!vantaEnabled ? 'fondo-estatico' : ''}`}
+    >
+      <div className="vanta-toggle">
+        <button onClick={() => setVantaEnabled((prev) => !prev)}>
+          {vantaEnabled ? 'Disable Background' : 'Enable Background'}
+        </button>
+      </div>
 
       <div className="container">
-        {/* tu contenido animado con Framer Motion */}
-        {/* ... header, hero, sections, etc. */}
         <motion.header
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1>Cristian Moreno</h1>
-          <p className="tagline">Desarrollador Fullstack Web</p>
+          <p className="tagline">Full Stack Web Developer</p>
           <motion.nav
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <a href="#projects">Proyectos</a>
-            <a href="#about">Sobre mí</a>
-            <a href="#contact">Contacto</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
           </motion.nav>
         </motion.header>
 
@@ -73,8 +70,8 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.7 }}
         >
-          <h2>¡Hola! Bienvenido a mi portafolio</h2>
-          <p>Apasionado por el desarrollo web, creando soluciones eficientes y modernas.</p>
+          <h2>Hello! Welcome to my portfolio</h2>
+          <p>Passionate about web development, crafting efficient and modern solutions.</p>
         </motion.section>
 
         <motion.section
@@ -84,7 +81,7 @@ function App() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2>Proyectos</h2>
+          <h2>Projects</h2>
           <div className="cards">
             {[1, 2, 3].map((n) => (
               <motion.div
@@ -95,12 +92,12 @@ function App() {
                 transition={{ duration: 0.6, delay: n * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="img-placeholder">Imagen {n}</div>
-                <h3>Proyecto {n}</h3>
-                <p>Descripción breve del proyecto y tecnologías utilizadas.</p>
+                <div className="img-placeholder">Image {n}</div>
+                <h3>Project {n}</h3>
+                <p>Brief description of the project and technologies used.</p>
                 <div className="card-buttons">
-                  <a href="#" className="btn">Ver demo</a>
-                  <a href="#" className="btn outline">Ver código</a>
+                  <a href="#" className="btn">View Demo</a>
+                  <a href="#" className="btn outline">View Code</a>
                 </div>
               </motion.div>
             ))}
@@ -114,9 +111,12 @@ function App() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Sobre mí</h2>
+          <h2>About Me</h2>
           <p>
-            I’m a multilingual Full Stack Web Developer and IT Support Specialist with hands-on experience delivering responsive, dynamic web applications. My diverse background in photography, digital media, and international customer service makes me highly adaptable and effective in fast-paced environments.
+            I’m a multilingual Full Stack Web Developer and IT Support Specialist with hands-on
+            experience delivering responsive, dynamic web applications. My diverse background in
+            photography, digital media, and international customer service makes me highly adaptable
+            and effective in fast-paced environments.
           </p>
         </motion.section>
 
@@ -127,8 +127,8 @@ function App() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2>Contacto</h2>
-          <p>Email: <a href="mailto:correo@ejemplo.com">benavidesmoreno1@gmail.com</a></p>
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:benavidesmoreno1@gmail.com">benavidesmoreno1@gmail.com</a></p>
           <p>GitHub: <a href="https://github.com/PhotoEditor-coder" target="_blank" rel="noreferrer">PhotoEditor-coder</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/cbenavides-dev/" target="_blank" rel="noreferrer">/in/cbenavides-dev</a></p>
         </motion.section>
@@ -138,7 +138,7 @@ function App() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          © 2025 Cristian Moreno – Portafolio Web
+          © 2025 Cristian Moreno – Web Portfolio
         </motion.footer>
       </div>
     </div>
