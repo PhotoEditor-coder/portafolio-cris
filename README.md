@@ -1,4 +1,32 @@
-# Getting Started with Create React App
+# 💼 Web Portfolio – Cristian Moreno
+
+Welcome to my personal developer portfolio!  
+This site is built with **React** and **pure CSS**, and showcases a selection of my projects, a brief bio, and contact information.
+
+---
+
+## 🌐 Live Demo
+
+👉 [https://portafolio-cris.vercel.app](https://portafolio-cris.vercel.app)
+
+---
+
+## ⚙️ Technologies Used
+
+- [React](https://reactjs.org/)
+- HTML5 and CSS3 (no frameworks)
+- Fully responsive design
+- Hosted on [Vercel](https://vercel.com)
+
+---
+
+## 📸 Previews
+
+### 🖥️ Desktop view
+![Desktop preview](https://via.placeholder.com/1000x600?text=Portfolio+desktop+preview)
+
+### 📱 Mobile view
+![Mobile preview](https://via.placeholder.com/400x800?text=Portfolio+mobile+preview)# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
