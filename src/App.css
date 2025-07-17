@@ -1,3 +1,4 @@
+/* ========== GENERAL ========== */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -6,12 +7,20 @@ body {
   line-height: 1.6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: auto;
   padding: 2rem;
+  color: #f1f1f1;
 }
 
+/* ========== HEADER ========== */
 header {
   text-align: center;
   padding: 2rem 0;
@@ -39,6 +48,7 @@ nav a:hover {
   color: #00fff7;
 }
 
+/* ========== SECTIONS ========== */
 section {
   margin: 3rem 0;
 }
@@ -47,59 +57,72 @@ section {
   text-align: center;
 }
 
+/* ========== PROJECT CARDS ========== */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background-color: #1a1c22;
-  border: 1px solid #2c2f36;
+  background: #1b1f24;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   padding: 1.5rem;
-  border-radius: 10px;
-  transition: transform 0.2s ease;
+  width: 300px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
-.img-placeholder {
-  background-color: #2f3136;
-  color: #ccc;
-  padding: 2rem;
-  text-align: center;
-  border-radius: 6px;
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 1rem;
 }
 
 .card-buttons {
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .btn {
-  display: inline-block;
   padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
+  border: none;
   background-color: #00fff7;
-  color: #0f1115;
-  border-radius: 4px;
+  color: black;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-}
-
-.btn.outline {
-  background: transparent;
-  border: 1px solid #00fff7;
-  color: #00fff7;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #00d6cc;
-  color: #0f1115;
+  background-color: #00cfc5;
 }
 
+.btn.outline {
+  background-color: transparent;
+  border: 2px solid #00fff7;
+  color: #00fff7;
+}
+
+.btn.outline:hover {
+  background-color: #00fff7;
+  color: black;
+}
+
+/* ========== CONTACT & FOOTER ========== */
 footer {
   text-align: center;
   margin-top: 4rem;
@@ -107,64 +130,17 @@ footer {
   color: #888;
 }
 
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #f9f9f9;
-    color: #222;
-  }
-
-  header h1 {
-    color:rgb(255, 255, 255);
-  }
-
-  .card {
-    background-color: #fff;
-    color: #222;
-    border: 1px solid #ddd;
-  }
-
-  .img-placeholder {
-    background-color: #eee;
-    color: #555;
-  }
-
-  .btn {
-    background-color: #003366;
-    color: #fff;
-  }
-
-  .btn.outline {
-    border-color: #003366;
-    color: #003366;
-  }
-
-  .btn:hover {
-    background-color: #0055aa;
-    color: #fff;
-  }
-
-  footer {
-    color: #666;
-  }
-}
-html {
-  scroll-behavior: smooth;
-}
+/* ========== VANTA BACKGROUND ========== */
 .vanta-background {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-  color: #f1f1f1;
+.fondo-estatico {
+  background-color: #0f1115 !important;
 }
+
 .vanta-toggle {
   position: absolute;
   top: 1rem;
@@ -186,24 +162,44 @@ html {
 .vanta-toggle button:hover {
   background-color: #00d6cc;
 }
-/* Fondo cuando el Vanta está activo */
-.vanta-background {
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
 
-/* Fondo fijo oscuro cuando Vanta está desactivado */
-.fondo-estatico {
-  background-color: #0f1115 !important;
-}
+/* ========== LIGHT MODE SUPPORT ========== */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f9f9f9;
+    color: #222;
+  }
 
-/* Asegúrate de que el texto sea claro */
-.container {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: auto;
-  color: #f1f1f1;
+  header h1 {
+    color: #222;
+  }
+
+  .card {
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #ddd;
+  }
+
+  .card-image {
+    border: 1px solid #ccc;
+  }
+
+  .btn {
+    background-color: #003366;
+    color: #fff;
+  }
+
+  .btn.outline {
+    border-color: #003366;
+    color: #003366;
+  }
+
+  .btn:hover {
+    background-color: #0055aa;
+    color: #fff;
+  }
+
+  footer {
+    color: #666;
+  }
 }
